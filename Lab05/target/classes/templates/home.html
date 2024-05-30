@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="_layout"   xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+<div layout:fragment="content" class="row">
+    <ul>
+        <li th:each="course : ${listcourse}"style="display:flex;" >
+            <div class="col-2">
+                <div  th:text="${course.getStartDate()}"
+                  style="border: 1px solid;
+                     width:150px;
+                     padding: 8px;
+                     background-color: red;
+                     margin-top: 8px;
+                    display: flex;
+                   align-items: center;">
+                </div>
+            </div>
+            <div class="col-2">
+            <p th:text="${course.getLectureName()} "style="align-items: center;
+                                                        display: flex;
+                                                        padding: 8px;
+                                                         margin-top: 20px">
+            </p>
+            <p th:text="${course.getPlace()}"style="align-items: center;
+                                                display: flex;
+                                                padding: 8px;
+                                                margin-top: 20px">
+            </p>
+            </div>
+        </li>
+
+    </ul>
+
+</div>
+
+</body>
+</html>
